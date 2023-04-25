@@ -1,19 +1,15 @@
-var currentQuestionNum = 1
-
-
-
 begin = () => {
     localStorage.clear();
     window.location.href = "./question.html";
 }
 
 questionStore = () => {
-    localStorage.setItem("question" + currentQuestionNum,document.getElementById("questionbox").value);
+    localStorage.setItem("question",document.getElementById("questionbox").value);
     window.location.href = "./answerInput.html";
 }
 
 loadQuestion = () => {
-    document.getElementById("askQuestion").innerHTML = localStorage.getItem("question" + currentQuestionNum);
+    document.getElementById("askQuestion").innerHTML = localStorage.getItem("question");
 }
 
 answerSubmit = (answerNum) => {

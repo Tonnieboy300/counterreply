@@ -6,10 +6,14 @@
     <script defer src="../main.js"></script>
   </head>
   <body onload="loadAnswers()">
-    <h1>Time for the answers to:</h1>
+    <h1>Time to Counter</h1>
     <h2 id="askQuestion">Whoops! Something went wrong!</h2>
     <h3 id="answer1">Whoops! Something went wrong!</h3>
+    <input type="text" id="counterOne">
+    <button onclick="counterSubmit('One')">Submit</button>
+    <hr>
     <h3 id="answer2">Whoops! Something went wrong!</h3>
-    <button onclick="counterRedirect()"></button>
+    <input type="text" id="counterTwo">
+    <button onclick="counterSubmit('Two')">Submit</button>
   </body>
 </html>

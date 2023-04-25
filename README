@@ -1,10 +1,10 @@
-#CounterReply
+# CounterReply
 A simple tool to create debates.
 
-##Game Structure
+## Game Structure
 First, a question is written for both players to repond to. Once they respond, each player writes a Counter, or rebuttal, to that answer. Based on these answers, a new question is written and the cycle repeats.
 
-##Code Structure
+## Code Structure
 Players are sent in a specific order through the pages:
 1. index.html
 2. question.html

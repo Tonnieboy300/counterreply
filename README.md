@@ -14,5 +14,5 @@ Players are sent in a specific order through the pages:
 6. displayCounters.html
 After this page, the cycle repeats, returning to question.html
 
-All javascript is contained in main.js
+All javascript is contained in main.js.
 This project uses bootstrap, with style.css only being used for margins.

@@ -11,8 +11,8 @@ Players are sent in a specific order through the pages:
 3. answerInput.html
 4. displayAnswers.html
 5. counterInput.html
-6. displayCounters.html
+6. displayCounters.html <br>
 After this page, the cycle repeats, returning to question.html
 
-All javascript is contained in main.js.
+All javascript is contained in main.js. <br>
 This project uses bootstrap, with style.css only being used for margins.

@@ -37,6 +37,11 @@ answerSubmit = (answerNum) => {
     localStorage.setItem("answerTwoDone", "no");
     window.location.href = "./displayAnswers.html";
   }
+
+  //changes the color of buttons when submitted
+  document.getElementById("button" + answerNum).classList.remove("btn-primary")
+  document.getElementById("button" + answerNum).classList.add("btn-success")
+
 };
 
 loadAnswers = () => {
@@ -72,6 +77,10 @@ counterSubmit = (answerNum) => {
     localStorage.setItem("counterTwoDone", "no");
     window.location.href = "./displayCounters.html";
   }
+
+  //changes button colors
+  document.getElementById("button" + answerNum).classList.remove("btn-primary")
+  document.getElementById("button" + answerNum).classList.add("btn-success")
 };
 
 loadCounters = () => {

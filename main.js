@@ -21,8 +21,8 @@ buttonChange = (answerNum) => {
   currentButton.classList.remove("btn-primary");
   currentButton.classList.add("btn-success");
 
-  currentButton.innerHTML = "Submitted!"
-}
+  currentButton.innerHTML = "Submitted!";
+};
 
 answerSubmit = (answerNum) => {
   localStorage.setItem(
@@ -47,7 +47,6 @@ answerSubmit = (answerNum) => {
   }
 
   buttonChange(answerNum);
-
 };
 
 loadAnswers = () => {

@@ -16,6 +16,14 @@ loadQuestion = () => {
     localStorage.getItem("question");
 };
 
+buttonChange = (answerNum) => {
+  var currentButton = document.getElementById("button" + answerNum);
+  currentButton.classList.remove("btn-primary");
+  currentButton.classList.add("btn-success");
+
+  currentButton.innerHTML = "Submitted!"
+}
+
 answerSubmit = (answerNum) => {
   localStorage.setItem(
     "answer" + answerNum,
@@ -38,9 +46,7 @@ answerSubmit = (answerNum) => {
     window.location.href = "./displayAnswers.html";
   }
 
-  //changes the color of buttons when submitted
-  document.getElementById("button" + answerNum).classList.remove("btn-primary")
-  document.getElementById("button" + answerNum).classList.add("btn-success")
+  buttonChange(answerNum);
 
 };
 
@@ -78,9 +84,7 @@ counterSubmit = (answerNum) => {
     window.location.href = "./displayCounters.html";
   }
 
-  //changes button colors
-  document.getElementById("button" + answerNum).classList.remove("btn-primary")
-  document.getElementById("button" + answerNum).classList.add("btn-success")
+  buttonChange(answerNum);
 };
 
 loadCounters = () => {

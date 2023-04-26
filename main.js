@@ -16,6 +16,14 @@ loadQuestion = () => {
     localStorage.getItem("question");
 };
 
+buttonChange = (answerNum) => {
+  var currentButton = document.getElementById("button" + answerNum);
+  currentButton.classList.remove("btn-primary");
+  currentButton.classList.add("btn-success");
+
+  currentButton.innerHTML = "Submitted!";
+};
+
 answerSubmit = (answerNum) => {
   localStorage.setItem(
     "answer" + answerNum,
@@ -37,6 +45,8 @@ answerSubmit = (answerNum) => {
     localStorage.setItem("answerTwoDone", "no");
     window.location.href = "./displayAnswers.html";
   }
+
+  buttonChange(answerNum);
 };
 
 loadAnswers = () => {
@@ -72,6 +82,8 @@ counterSubmit = (answerNum) => {
     localStorage.setItem("counterTwoDone", "no");
     window.location.href = "./displayCounters.html";
   }
+
+  buttonChange(answerNum);
 };
 
 loadCounters = () => {

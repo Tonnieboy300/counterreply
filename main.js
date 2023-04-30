@@ -19,21 +19,31 @@ loadQuestion = () => {
 buttonChange = (answerNum) => {
   var currentButton = document.getElementById("button" + answerNum);
   currentButton.classList.remove("btn-primary");
+  currentButton.classList.remove("btn-danger");
   currentButton.classList.add("btn-success");
 
   currentButton.innerHTML = "Submitted!";
 };
 
-answerSubmit = (answerNum) => {
+answerSubmit = (answerNum, isCounter) => {
+  if (isCounter == true){
+    var inputType = "counter"
+    var nextPage = "Counters"
+  } else{
+    var inputType = "answer"
+    var nextPage = "Answers"
+  }
+
+
   localStorage.setItem(
-    "answer" + answerNum,
-    document.getElementById("answer" + answerNum).value
+    inputType + answerNum,
+    document.getElementById(inputType + answerNum).value
   );
   //checks if both have been submitted
-  if (answerNum == "One") {
+  if (answerNum == 1) {
     localStorage.setItem("answerOneDone", "yes");
   }
-  if (answerNum == "Two") {
+  if (answerNum == 2) {
     localStorage.setItem("answerTwoDone", "yes");
   }
 
@@ -43,7 +53,7 @@ answerSubmit = (answerNum) => {
   ) {
     localStorage.setItem("answerOneDone", "no");
     localStorage.setItem("answerTwoDone", "no");
-    window.location.href = "./displayAnswers.html";
+    window.location.href = "./display"+nextPage+".html";
   }
 
   buttonChange(answerNum);
@@ -52,48 +62,23 @@ answerSubmit = (answerNum) => {
 loadAnswers = () => {
   loadQuestion();
   document.getElementById("answer1").innerHTML =
-    localStorage.getItem("answerOne");
+    localStorage.getItem("answer1");
   document.getElementById("answer2").innerHTML =
-    localStorage.getItem("answerTwo");
+    localStorage.getItem("answer2");
 };
 
 counterRedirect = () => {
   window.location.href = "./counterInput.html";
 };
 
-counterSubmit = (answerNum) => {
-  localStorage.setItem(
-    "counter" + answerNum,
-    document.getElementById("counter" + answerNum).value
-  );
-  //checks if both have been submitted
-  if (answerNum == "One") {
-    localStorage.setItem("counterOneDone", "yes");
-  }
-  if (answerNum == "Two") {
-    localStorage.setItem("counterTwoDone", "yes");
-  }
-
-  if (
-    localStorage.getItem("counterOneDone") == "yes" &&
-    localStorage.getItem("counterTwoDone") == "yes"
-  ) {
-    localStorage.setItem("counterOneDone", "no");
-    localStorage.setItem("counterTwoDone", "no");
-    window.location.href = "./displayCounters.html";
-  }
-
-  buttonChange(answerNum);
-};
-
 loadCounters = () => {
   loadQuestion();
   document.getElementById("answer1").innerHTML =
-    localStorage.getItem("answerOne");
+    localStorage.getItem("answer1");
   document.getElementById("answer2").innerHTML =
-    localStorage.getItem("answerTwo");
+    localStorage.getItem("answer2");
   document.getElementById("counter1").innerHTML =
-    localStorage.getItem("counterOne");
+    localStorage.getItem("counter1");
   document.getElementById("counter2").innerHTML =
-    localStorage.getItem("counterTwo");
+    localStorage.getItem("counter2");
 };

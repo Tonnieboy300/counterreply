@@ -19,6 +19,7 @@ loadQuestion = () => {
 buttonChange = (answerNum) => {
   var currentButton = document.getElementById("button" + answerNum);
   currentButton.classList.remove("btn-primary");
+  currentButton.classList.remove("btn-danger");
   currentButton.classList.add("btn-success");
 
   currentButton.innerHTML = "Submitted!";

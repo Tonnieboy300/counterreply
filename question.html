@@ -22,8 +22,7 @@
   >
     <div class="currentTitle">
       <h1>Ask a Question</h1>
-    </div>
-    <div class="row">
+    <div class="row currentQuestion">
       <input
         type="text"
         id="questionbox"
@@ -32,11 +31,13 @@
       />
       <button
         type="button"
-        class="btn btn-primary col-3"
+        id="questionButton"
+        class="btn btn-warning col-3"
         onclick="questionStore()"
       >
         Submit
       </button>
+    </div>
     </div>
   </body>
 </html>

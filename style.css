@@ -45,6 +45,21 @@
 }
 
 /*All "...input.html" pages should have .inputPage in their body.*/
-.inputPage .input1, .input2{
+.inputPage .input1,.input2{
   padding:5px;
+}
+
+/*ensures text boxes stay inside of containers*/
+.input1,.input2,.currentTitle .input1,.input2,.currentQuestion{
+  margin-left:5px !important; 
+  margin-right:5px !important; 
+}
+
+.currentTitle .currentQuestion{
+  padding:5px;
+}
+
+#questionButton{
+  background-color: var(--bs-orange);
+  border-style:none;
 }

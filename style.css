@@ -1,7 +1,65 @@
+/*color variations in bootstrap not included as css variables.*/
+:root {
+  --bs-red-800: #58151c;
+  --bs-blue-800: #052c65;
+  --bs-yellow-800: #664d03;
+  --bs-orange-800: #653208;
+}
+
+
 #answerRow {
   margin-bottom: 10px;
 }
 
 #restartButton {
   margin-top: 10px;
+}
+
+.currentTitle {
+  background-color: var(--bs-yellow-800);
+  border-color: var(--bs-yellow);
+}
+
+.input1{
+  border-color: var(--bs-red);
+  background-color: var(--bs-red-800);
+}
+
+.input2 {
+  border-color:var(--bs-blue);
+  background-color: var(--bs-blue-800);
+}
+
+.currentQuestion {
+  border-color:var(--bs-orange);
+  background-color: var(--bs-orange-800);
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.input1, .currentTitle, .currentQuestion, .input2{
+  margin-bottom:10px;
+  border-style:solid;
+  border-radius: 10px;
+  color:white;
+}
+
+/*All "...input.html" pages should have .inputPage in their body.*/
+.inputPage .input1,.input2{
+  padding:5px;
+}
+
+/*ensures text boxes stay inside of containers*/
+.input1,.input2,.currentTitle .input1,.input2,.currentQuestion{
+  margin-left:5px !important; 
+  margin-right:5px !important; 
+}
+
+.currentTitle .currentQuestion{
+  padding:5px;
+}
+
+#questionButton{
+  background-color: var(--bs-orange);
+  border-style:none;
 }

@@ -19,12 +19,17 @@
   </head>
   <body
     onload="loadAnswers()"
-    class="container text-center position-absolute top-50 start-50 translate-middle"
+    class="container text-center position-absolute top-50 start-50 translate-middle inputPage"
   >
+    <div class="currentTitle">
     <h1>Time to Counter</h1>
-    <div class="row">
-      <h2 id="askQuestion">Whoops! Something went wrong!</h2>
+    <div class="currentQuestion">
+    <h2 id="askQuestion">Whoops! Something went wrong!</h2>
+    </div>
+    </div>
+    <div class="input1">
       <h3 id="answer1">Whoops! Something went wrong!</h3>
+      <div class="input2 row">
       <input type="text" id="counter1" class="form-control col" />
       <button
         type="button"
@@ -34,8 +39,19 @@
       >
         Submit
       </button>
+      </div>
     </div>
     <hr />
+
+    <div class="input2">
+      <h3 id="answer2">Whoops! Something went wrong!</h3>
+      <div class="row input1">
+      <input type="text" id="counter2" class="form-control col" />
+      <button
+        type="button"
+        id="button2"
+        class="btn btn-danger col-3"
+        onclick="counterSubmit(2,true)"
     <h3 id="answer2">Whoops! Something went wrong!</h3>
     <div class="row">
       <input type="text" id="counter2" class="form-control col" />
@@ -47,6 +63,7 @@
       >
         Submit
       </button>
+      </div>
     </div>
   </body>
 </html>

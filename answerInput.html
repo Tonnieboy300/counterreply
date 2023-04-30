@@ -19,22 +19,22 @@
   </head>
   <body
     onload="loadQuestion()"
-    class="container text-center position-absolute top-50 start-50 translate-middle"
+    class="container text-center position-absolute top-50 start-50 translate-middle inputPage"
   >
     <h1>Answer this:</h1>
     <h2 id="askQuestion">Whoops! Something went wrong!</h2>
-    <div class="row" id="answerRow">
+    <div class="row input1" id="answerRow">
       <input type="text" id="answer1" class="form-control col" />
       <button
         type="button"
         id="button1"
-        class="btn btn-primary col-3"
+        class="btn btn-danger col-3"
         onclick="answerSubmit(1,false)"
       >
         Submit
       </button>
     </div>
-    <div class="row">
+    <div class="row input2">
       <input type="text" id="answer2" class="form-control col" />
       <button
         type="button"

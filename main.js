@@ -1,10 +1,10 @@
 const streamChannel = new BroadcastChannel("streamerModeChannel");
 
-//check switch statement at line 110 for message number meanings
+//check switch statement at line 148 for message number meanings
 
 begin = () => {
   localStorage.clear();
-  window.location.href = "./question.html";
+  window.location.href = "../question.html";
 };
 
 beginStreamer = () => {

@@ -1,6 +1,16 @@
+const streamChannel = new BroadcastChannel("streamerModeChannel");
+
+//check switch statement at line 110 for message number meanings
+
 begin = () => {
   localStorage.clear();
   window.location.href = "./question.html";
+};
+
+beginStreamer = () => {
+  localStorage.clear();
+  window.open("./streamer/waiting.html")
+  window.location.href = "./streamer/question.html";
 };
 
 questionStore = () => {
@@ -9,6 +19,15 @@ questionStore = () => {
     document.getElementById("questionbox").value
   );
   window.location.href = "./answerInput.html";
+};
+
+questionStoreStream = () => {
+  localStorage.setItem(
+    "question",
+    document.getElementById("questionbox").value
+  );
+  sendMessage(1)
+  window.location.href = "./answerInput.html"
 };
 
 loadQuestion = () => {
@@ -59,6 +78,43 @@ answerSubmit = (answerNum, isCounter) => {
   buttonChange(answerNum);
 };
 
+answerSubmitStream = (answerNum, isCounter) => {
+  if (isCounter == true){
+    var inputType = "counter"
+    var messageNum = 3
+    var nextPage = "./index.html"
+  } else{
+    var inputType = "answer"
+    var messageNum = 2
+    var nextPage = "./counterInput.html"
+  }
+
+
+  localStorage.setItem(
+    inputType + answerNum,
+    document.getElementById(inputType + answerNum).value
+  );
+  //checks if both have been submitted
+  if (answerNum == 1) {
+    localStorage.setItem("answerOneDone", "yes");
+  }
+  if (answerNum == 2) {
+    localStorage.setItem("answerTwoDone", "yes");
+  }
+
+  if (
+    localStorage.getItem("answerOneDone") == "yes" &&
+    localStorage.getItem("answerTwoDone") == "yes"
+  ) {
+    localStorage.setItem("answerOneDone", "no");
+    localStorage.setItem("answerTwoDone", "no");
+    sendMessage(messageNum);
+    window.location.href = nextPage;
+  }
+
+  buttonChange(answerNum);
+};
+
 loadAnswers = () => {
   loadQuestion();
   document.getElementById("answer1").innerHTML =
@@ -82,3 +138,25 @@ loadCounters = () => {
   document.getElementById("counter2").innerHTML =
     localStorage.getItem("counter2");
 };
+
+sendMessage = (message) => {
+  streamChannel.postMessage(message);
+  console.log(message)
+}
+
+streamChannel.onmessage = (event) => {
+  switch(event.data) {
+    case 1:
+      window.location.href = "./displayQuestion.html"
+      break;
+    case 2:
+      window.location.href = "./displayAnswers.html"
+      break;
+    case 3:
+      window.location.href = "./displayCounters.html"
+      break;
+    case 4:
+      window.location.href = "./waiting.html"
+      break;
+  }
+}

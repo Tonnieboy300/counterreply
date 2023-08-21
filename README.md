@@ -18,5 +18,7 @@ Players are sent in a specific order through the pages:
 6. displayCounters.html <br>
    After this page, the cycle repeats, returning to question.html
 
+In Streamer Mode, 2 windows are open at the same time. One controls the game, and the other displays the game to viewers.
+
 All javascript is contained in main.js. <br>
 This project uses bootstrap, with style.css only being used for margins.

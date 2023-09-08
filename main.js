@@ -4,7 +4,7 @@ const streamChannel = new BroadcastChannel("streamerModeChannel");
 
 begin = () => {
   localStorage.clear();
-  window.location.href = "../question.html";
+  window.location.href = "./question.html";
 };
 
 beginStreamer = () => {
